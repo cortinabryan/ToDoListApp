@@ -57,3 +57,13 @@ body {
   border-bottom: 2px solid #d49a3f;
 }
 
+.todo__item:hover {
+  cursor: default;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #aaa;
+  border-bottom: 2px solid rgb(65, 52, 32);
+}
+
