@@ -1,10 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -25,10 +25,35 @@ body{
   overflow: scroll;
 }
 
-.todo__title{
+.todo__title {
   margin: 1rem;
   text-align: center;
 }
 .todo_input {
   width: 100%;
 }
+
+.todo__header {
+  padding: 1rem 0;
+}
+
+.todo__title {
+  margin: 1rem;
+  text-align: center;
+}
+
+.todo__input {
+  width: 100%;
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.todo__item {
+  list-style-type: none;
+  padding: 1rem 1.2rem;
+  border-bottom: 2px solid #d49a3f;
+}
+
