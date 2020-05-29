@@ -1,12 +1,31 @@
 const todoInputEl = document.querySelector(".todo__input");
 const todoListEl = document.querySelector(".todo__list");
-const todoItemEl = document.querySelector(".todo__item");
+const todoItemEls = document.querySelector(".todo__item");
 
 function addListItem() {
   todoInputEl.addEventListener("keypress", function(event) {
     if (event.keyCode === 13){
-      console.log(todoInputEl.value)
-      todoListEl.appendChild(todoInputEl.value)
+      let newListItem = createListItem(todoInputEl.value);
+      // todoListEl.appendChild(newListItem)
+      todoListEl.insertBefore(newListItem, todoListEl.childNodes[0])
+      todoInputEl.value = "";
+    }
+  })
+}
+
+// doesn't work. *I need to research more in bubbling and propagation
+// function toggleDone() {
+//   for (let elem of todoItemEls){
+//     elem.addEventListener("click", function() {
+//       elem.classList.toggle("done");
+//     })
+//   }
+// }
+
+function toggleDone(){
+  todoListEl.addEventListener("click", function(event){
+    if (event.target.classList.contains("todo__item")) {
+      event.target.classList.toggle("done");
     }
   })
 }
@@ -14,9 +33,10 @@ function addListItem() {
 function createListItem(text) {
   const newListElement = document.createElement("li");
   newListElement.textContent = text;
+  newListElement.setAttribute("class", "todo__item");
   return newListElement;
 }
 
-console.log(createListItem("do the laundry"));
+toggleDone();
 
 addListItem();
